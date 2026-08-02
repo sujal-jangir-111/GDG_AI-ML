@@ -1,0 +1,45 @@
+# ==========================================
+# Virtual Environments (NEVER push to GitHub)
+# ==========================================
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# ==========================================
+# Python Bytecode & Cache
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==========================================
+# Jupyter Notebook Checkpoints
+# ==========================================
+.ipynb_checkpoints
+
+# ==========================================
+# EasyOCR & Heavy Model Downloads
+# ==========================================
+frontend/easyocr_data/
+frontend/ocr_models/
+*.pth
+
+# ==========================================
+# Operating System & IDE Junk Files
+# ==========================================
+# Windows junk
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Mac junk
+.DS_Store
+.AppleDouble
+
+# VS Code & PyCharm settings
+.vscode/
+.idea/
+
+# Environment Variables & Secrets
+.env
