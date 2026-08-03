@@ -97,7 +97,6 @@ sample_med = st.sidebar.selectbox(
     "Click a sample medicine to test:",
     [
         "Select a sample...",
-        "Curosurf 120mg Injection",
         "Lulifer 1% Cream",
         "Moxind 500mg Capsule",
         "Ero 150mg Tablet",
