@@ -21,7 +21,7 @@ st.set_page_config(
 )
 
 # 2. Global Backend URL & Paths
-API_URL = "http://127.0.0.1:8000"
+API_URL = "https://gdg-ai-ml.onrender.com"  # "http://127.0.0.1:8000"
 
 # Local directory for storing EasyOCR models (Bypasses Windows C:\Users Permission Error)
 OCR_MODEL_DIR = os.path.join(os.path.dirname(__file__), "ocr_models")
@@ -212,7 +212,7 @@ if st.button("Search Medicine", type="primary"):
                         
                         st.dataframe(
                             df_alts.rename(columns={
-                                "brand_name": "Brand Name",
+                                "brand_name": "Brand Name", 
                                 "manufacturer": "Manufacturer",
                                 "price_inr": "Price (₹)",
                                 "pack_size": "Pack Size",
