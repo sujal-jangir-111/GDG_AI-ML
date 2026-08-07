@@ -11,8 +11,8 @@ An AI-powered web application that estimates a **fair market price** for prescri
 
 ## 🔗 Live Demo & Deployment
 
-* **Live Web App:** `[Insert Your Deployed Streamlit / Render Link Here]`
-* **FastAPI Backend Documentation:** `[Insert Your Deployed API Link Here]/docs`
+* **Live Web App:** https://gdgai-ml-gxeg3j7zzzxhsmhgbebrwr.streamlit.app/
+* **FastAPI Backend Documentation:** https://gdg-ai-ml.onrender.com/docs#/default/get_alternatives_alternatives_get
 
 ---
 
@@ -55,11 +55,6 @@ Composition text in raw datasets is notoriously messy (e.g., `"Paracetamol (500m
 * **`price_inr > 0`:** Removed invalid zero-priced records (missing data or non-commercial public distribution vaccine schemes).
 * **`price_inr <= 3000`:** Applied 99th percentile upper-tail outlier capping.
   * *Reasoning:* Exploratory Data Analysis (EDA) revealed that 99% of consumer medicines cost under **₹2,899** (Median = ₹79, 75th Percentile = ₹140). Extreme 0.01% outliers (up to ₹4,36,000 for rare imported cancer biologics) distorted decision tree split thresholds. Capping at ₹3,000 drastically improved overall model accuracy (MAE) for 99% of everyday consumer drugs.
-
-### 3. Unit Price Normalization (`unit_price`)
-To ensure fair comparisons between different pack sizes (e.g., comparing a 10-tablet strip vs. a 100-tablet box):
-$$\text{Unit Price} = \frac{\text{price\_inr}}{\text{pack\_size}}$$
-The alternative finder sorts and recommends substitutes based on `unit_price`, preventing misleading comparisons between different box sizes.
 
 ---
 
@@ -124,50 +119,108 @@ We evaluated three tree-based regression models using **Mean Absolute Error (MAE
 
 
 
-
 ## 💻 How to Run the Project (Step-by-Step Guide)
 
-Follow these simple steps to set up and run both the **FastAPI Backend** and **Streamlit Frontend** on your local machine.
+Follow these steps to set up and run both the **FastAPI Backend** and **Streamlit Frontend** on your local machine.
 
-### Prerequisites
-Make sure you have installed on your system:
-* **Python 3.10** or higher
-* **Git**
+---
 
-### Step 1: Clone the Repository
+## 📋 Prerequisites
+
+Make sure the following are installed on your system:
+
+- **Python 3.10+**
+- **Git**
+
+---
+
+## 🚀 Step 1: Clone the Repository
+
 ```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
-Step 2: Create and Activate a Virtual Environment
-On Windows (Command Prompt / PowerShell):
-code
-Cmd
+```
+
+---
+
+## 🐍 Step 2: Create and Activate a Virtual Environment
+
+### Windows (Command Prompt / PowerShell)
+
+```bash
 python -m venv venv
 venv\Scripts\activate
-On Mac / Linux:
-code
-Bash
+```
+
+### macOS / Linux
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
-(You should see (venv) appear at the beginning of your terminal prompt).
-Step 3: Install Dependencies
+```
+
+After activation, you should see `(venv)` at the beginning of your terminal prompt.
+
+---
+
+## 📦 Step 3: Install Dependencies
+
 Install all required libraries for both backend and frontend:
-code
-Bash
+
+```bash
 pip install -r backend/requirements.txt
 pip install easyocr pillow numpy
-Step 4: Run the FastAPI Backend Server
-Open your terminal and navigate into the backend/ directory:
-code
-Bash
+```
+
+---
+
+## ⚙️ Step 4: Run the FastAPI Backend Server
+
+Open a terminal and navigate to the `backend/` directory:
+
+```bash
 cd backend
 uvicorn main:app --reload
-Backend URL: http://127.0.0.1:8000
-Interactive API Docs (Swagger UI): http://127.0.0.1:8000/docs
-(Leave this terminal running! The backend must stay active to handle search requests).
-Step 5: Run the Streamlit Frontend Website
-Open a NEW terminal window, activate your virtual environment again (venv\Scripts\activate), and navigate into the frontend/ directory:
-code
-Bash
+```
+
+### Backend URLs
+
+- **API Base URL:** http://127.0.0.1:8000
+- **Swagger UI:** http://127.0.0.1:8000/docs
+
+> Keep this terminal running. The backend must remain active to handle search requests.
+
+---
+
+## 🌐 Step 5: Run the Streamlit Frontend
+
+Open a **new terminal window**, activate the virtual environment again, and navigate to the `frontend/` directory.
+
+### Windows
+
+```bash
+venv\Scripts\activate
 cd frontend
 streamlit run app.py
+```
+
+### macOS / Linux
+
+```bash
+source venv/bin/activate
+cd frontend
+streamlit run app.py
+```
+
+The Streamlit application will start and provide a local URL in the terminal (usually `http://localhost:8501`).
+
+---
+
+## ✅ Project Running Successfully
+
+Once both servers are running:
+
+- **FastAPI Backend:** `http://127.0.0.1:8000`
+- **Streamlit Frontend:** `http://localhost:8501`
+
+You can now upload images and perform reverse image searches through the Streamlit web interface.
