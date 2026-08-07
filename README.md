@@ -12,8 +12,7 @@ An AI-powered web application that estimates a **fair market price** for prescri
 ## 🔗 Live Demo & Deployment
 
 * **Live Web App:** https://gdgai-ml-gxeg3j7zzzxhsmhgbebrwr.streamlit.app/
-* **FastAPI Backend Documentation:** https://gdg-ai-ml.onrender.com/docs#/default/get_alternatives_alternatives_get
-
+* **FastAPI Backend Documentation:** https://gdg-ai-ml.onrender.com/docs
 ---
 
 ## 📌 Problem Statement & Solution
