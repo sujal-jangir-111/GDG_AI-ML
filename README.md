@@ -53,7 +53,7 @@ Composition text in raw datasets is notoriously messy (e.g., `"Paracetamol (500m
 ### 2. Anomaly Removal & Outlier Capping
 * **`price_inr > 0`:** All the medicines with price_inr = 0 are COVID-19 vaccines.
 
-* So there are two possibilities:
+So there are two possibilities:
  * -> 0 means medicine was free 
  * -> 0 means the price is unavailable or may be missing
 
