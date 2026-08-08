@@ -62,6 +62,10 @@ So there are two possibilities:
 * **`price_inr <= 3000`:** Applied 99th percentile upper-tail outlier capping.
   * *Reasoning:* Exploratory Data Analysis (EDA) revealed that 99% of consumer medicines cost under **₹2,899** (Median = ₹79, 75th Percentile = ₹140). Extreme 0.01% outliers (up to ₹4,36,000 for rare imported cancer biologics) distorted decision tree split thresholds. Capping at ₹3,000 drastically improved overall model accuracy (MAE) for 99% of everyday consumer drugs.
 
+### 3. Missing values  
+* 'pack_size' and 'pack_unit' columns have missing values on the same row so i have filled 'pack_size'(numerical) and 'pack_unit'(categorical)
+with '-1' and 'Unknown' respectively. 
+
 --- 
 
 ## 📊 Machine Learning Model Selection & Results
