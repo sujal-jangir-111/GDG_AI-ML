@@ -55,7 +55,7 @@ Composition text in raw datasets is notoriously messy (e.g., `"Paracetamol (500m
 * **`price_inr <= 3000`:** Applied 99th percentile upper-tail outlier capping.
   * *Reasoning:* Exploratory Data Analysis (EDA) revealed that 99% of consumer medicines cost under **₹2,899** (Median = ₹79, 75th Percentile = ₹140). Extreme 0.01% outliers (up to ₹4,36,000 for rare imported cancer biologics) distorted decision tree split thresholds. Capping at ₹3,000 drastically improved overall model accuracy (MAE) for 99% of everyday consumer drugs.
 
----
+--- 
 
 ## 📊 Machine Learning Model Selection & Results
 
@@ -110,116 +110,192 @@ We evaluated three tree-based regression models using **Mean Absolute Error (MAE
 
 
 
+### Folder Description
 
+- **backend/** → Backend application and API logic.
+- **frontend/** → User interface application and OCR-related components.
+- **data/** → Input data, uploaded files, and datasets.
+- **model/** → Trained ML models and related artifacts.
+- **README.md** → Project documentation.
 
+---
 
+## 🚀 Features
 
+- OCR-based text extraction.
+- Frontend interface for user interaction.
+- Backend service for processing requests.
+- Modular folder structure for easy development and deployment.
 
+---
 
+## 🛠️ Tech Stack
 
-
-## 💻 How to Run the Project (Step-by-Step Guide)
-
-Follow these steps to set up and run both the **FastAPI Backend** and **Streamlit Frontend** on your local machine.
+- **Python 3.10+**
+- **Streamlit** (frontend)
+- **EasyOCR**
+- **Machine Learning / AI libraries**
+- **FastAPI / Flask** (depending on backend implementation)
 
 ---
 
 ## 📋 Prerequisites
 
-Make sure the following are installed on your system:
+Make sure the following are installed:
 
-- **Python 3.10+**
-- **Git**
+- Python 3.10 or later
+- pip
+- Git
 
----
-
-## 🚀 Step 1: Clone the Repository
+Check your installation:
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+python --version
+pip --version
+git --version
 ```
 
 ---
 
-## 🐍 Step 2: Create and Activate a Virtual Environment
+# ⚙️ Installation
 
-### Windows (Command Prompt / PowerShell)
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-### macOS / Linux
+## 1. Clone the Repository
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-After activation, you should see `(venv)` at the beginning of your terminal prompt.
-
----
-
-## 📦 Step 3: Install Dependencies
-
-Install all required libraries for both backend and frontend:
-
-```bash
-pip install -r backend/requirements.txt
-pip install easyocr pillow numpy
+git clone https://github.com/sujal-jangir-111/GDG_AI-ML.git
+cd GDG_AI-ML
 ```
 
 ---
 
-## ⚙️ Step 4: Run the FastAPI Backend Server
-
-Open a terminal and navigate to the `backend/` directory:
-
-```bash
-cd backend
-uvicorn main:app --reload
-```
-
-### Backend URLs
-
-- **API Base URL:** http://127.0.0.1:8000
-- **Swagger UI:** http://127.0.0.1:8000/docs
-
-> Keep this terminal running. The backend must remain active to handle search requests.
-
----
-
-## 🌐 Step 5: Run the Streamlit Frontend
-
-Open a **new terminal window**, activate the virtual environment again, and navigate to the `frontend/` directory.
+## 2. Create a Virtual Environment
 
 ### Windows
 
 ```bash
-venv\Scripts\activate
-cd frontend
-streamlit run app.py
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-### macOS / Linux
+### Linux / macOS
 
 ```bash
-source venv/bin/activate
-cd frontend
-streamlit run app.py
+python3 -m venv .venv
+source .venv/bin/activate
 ```
-
-The Streamlit application will start and provide a local URL in the terminal (usually `http://localhost:8501`).
 
 ---
 
-## ✅ Project Running Successfully
+## 3. Install Backend Dependencies
 
-Once both servers are running:
+```bash
+cd backend
+pip install -r requirements.txt
+cd ..
+```
 
-- **FastAPI Backend:** `http://127.0.0.1:8000`
-- **Streamlit Frontend:** `http://localhost:8501`
+---
 
-You can now upload images and perform reverse image searches through the Streamlit web interface.
+## 4. Install Frontend Dependencies
+
+```bash
+cd frontend
+pip install -r requirements.txt
+cd ..
+```
+
+---
+
+# ▶️ Running the Project
+
+## Start the Backend
+
+From the project root:
+
+```bash
+cd backend
+python main.py
+```
+
+The backend server will start on the configured host and port.
+
+---
+
+## Start the Frontend
+
+Open a new terminal, activate the virtual environment, and run:
+
+```bash
+cd frontend
+streamlit run app.py
+```
+
+Streamlit will provide a local URL, usually:
+
+```text
+http://localhost:8501
+```
+
+Open this URL in your browser.
+
+---
+
+# 📦 Data and Models
+
+- Place datasets inside the **data/** folder.
+- Place trained model files inside the **model/** folder.
+- OCR model files are stored inside **frontend/ocr_models/**.
+
+---
+
+# 🧪 Example Workflow
+
+1. Launch the backend.
+2. Launch the frontend.
+3. Upload a document/image through the frontend.
+4. OCR extracts text from the document.
+5. Backend processes the extracted information.
+6. Results are displayed in the frontend interface.
+
+---
+
+# 📝 Requirements Files
+
+- `backend/requirements.txt` → Backend dependencies.
+- `frontend/requirements.txt` → Frontend and OCR dependencies.
+
+Install them separately as shown above.
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Push to your fork.
+5. Open a Pull Request.
+
+---
+
+# 📌 Notes
+
+- Do not commit large datasets or trained models unless required.
+- Ensure `.venv/` and other environment folders are excluded via `.gitignore`.
+
+---
+
+# 👨‍💻 Author
+
+**Sujal Jangir**  
+B.Tech CSE, LNMIIT Jaipur
+
+GitHub: https://github.com/sujal-jangir-111
+
+---
+
+# 📄 License
+
+This project is for educational and learning purposes.
