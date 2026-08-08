@@ -51,7 +51,13 @@ Composition text in raw datasets is notoriously messy (e.g., `"Paracetamol (500m
 * Result: Produced a clean, unified `cleaned_composition` column that allows reliable matching across different manufacturer brand names.
 
 ### 2. Anomaly Removal & Outlier Capping
-* **`price_inr > 0`:** Removed invalid zero-priced records (missing data or non-commercial public distribution vaccine schemes).
+* **`price_inr > 0`:** All the medicines with price_inr = 0 are COVID-19 vaccines.
+                          So there are two possibilities:
+                          -> 0 means medicine was free 
+                          -> 0 means the price is unavailable or may be missing
+
+                        but model will not preform good when price is zero, so i decided to drop it 
+                        
 * **`price_inr <= 3000`:** Applied 99th percentile upper-tail outlier capping.
   * *Reasoning:* Exploratory Data Analysis (EDA) revealed that 99% of consumer medicines cost under **₹2,899** (Median = ₹79, 75th Percentile = ₹140). Extreme 0.01% outliers (up to ₹4,36,000 for rare imported cancer biologics) distorted decision tree split thresholds. Capping at ₹3,000 drastically improved overall model accuracy (MAE) for 99% of everyday consumer drugs.
 
