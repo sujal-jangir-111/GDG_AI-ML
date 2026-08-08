@@ -109,7 +109,7 @@ We evaluated three tree-based regression models using **Mean Absolute Error (MAE
 
 
 
-
+```
 ### Folder Description
 
 - **backend/** → Backend application and API logic.
@@ -141,13 +141,13 @@ We evaluated three tree-based regression models using **Mean Absolute Error (MAE
 
 ## 📋 Prerequisites
 
-Make sure the following are installed:
+## Make sure the following are installed:
 
 - Python 3.10 or later
 - pip
 - Git
 
-Check your installation:
+## Check your installation:
 
 ```bash
 python --version
@@ -162,8 +162,8 @@ git --version
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/sujal-jangir-111/GDG_AI-ML.git
-cd GDG_AI-ML
+git clone https://github.com/sujal-jangir-111/GDG_AI-ML.git 
+cd GDG_AI-ML 
 ```
 
 ---
@@ -238,24 +238,6 @@ http://localhost:8501
 
 Open this URL in your browser.
 
----
-
-# 📦 Data and Models
-
-- Place datasets inside the **data/** folder.
-- Place trained model files inside the **model/** folder.
-- OCR model files are stored inside **frontend/ocr_models/**.
-
----
-
-# 🧪 Example Workflow
-
-1. Launch the backend.
-2. Launch the frontend.
-3. Upload a document/image through the frontend.
-4. OCR extracts text from the document.
-5. Backend processes the extracted information.
-6. Results are displayed in the frontend interface.
 
 ---
 
@@ -266,24 +248,6 @@ Open this URL in your browser.
 
 Install them separately as shown above.
 
----
-
-# 🤝 Contributing
-
-Contributions are welcome.
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Push to your fork.
-5. Open a Pull Request.
-
----
-
-# 📌 Notes
-
-- Do not commit large datasets or trained models unless required.
-- Ensure `.venv/` and other environment folders are excluded via `.gitignore`.
 
 ---
 
